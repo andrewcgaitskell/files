@@ -1,0 +1,36 @@
+pi@ACG34WebServer:~/MyCode $ rsync -avz -e ssh andrewgaitskell@192.168.1.5:/Users/andrewgaitskell/MyCode/ /home/pi/MyCode/
+ssh: connect to host 192.168.1.5 port 22: Connection refused
+rsync: connection unexpectedly closed (0 bytes received so far) [Receiver]
+rsync error: unexplained error (code 255) at io.c(235) [Receiver=3.1.2]
+pi@ACG34WebServer:~/MyCode $ rsync -avz -e ssh andrewgaitskell@192.168.1.5:/Users/andrewgaitskell/MyCode/ /home/pi/MyCode/
+The authenticity of host '192.168.1.5 (192.168.1.5)' can't be established.
+ECDSA key fingerprint is SHA256:t9XRJ0hDZFnje66h6aC+B7Jsnj4N9W0rlGcxtoHEZ8Q.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '192.168.1.5' (ECDSA) to the list of known hosts.
+Password:
+receiving file list ... done
+index.html
+
+sent 42 bytes  received 3,196 bytes  239.85 bytes/sec
+total size is 10,716  speedup is 3.31
+pi@ACG34WebServer:~/MyCode $ ssh andrewgaitskell@192.168.1.5
+Password:
+Last login: Sun Nov  5 22:12:53 2017
+Andrews-MacBook-Air:~ andrewgaitskell$ logout
+Connection to 192.168.1.5 closed.
+pi@ACG34WebServer:~/MyCode $ 
+
+
+==============
+
+Andrews-MacBook-Air:MyCode andrewgaitskell$ rsync -avz -e ssh pi@192.168.1.11:/home/pi/MyCode/ /Users/andrewgaitskell/MyCode/
+pi@192.168.1.11's password: 
+Permission denied, please try again.
+pi@192.168.1.11's password: 
+receiving file list ... done
+./
+andrew.txt
+
+sent 44 bytes  received 155 bytes  9.71 bytes/sec
+total size is 12  speedup is 0.06
+Andrews-MacBook-Air:MyCode andrewgaitskell$ 
